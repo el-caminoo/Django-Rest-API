@@ -26,7 +26,7 @@ SECRET_KEY = 'al$3=4rq7#(+-o1+1c37=f3^3s_g58!^8bhyd6ffaw%)^(7-(z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['abuad-visitors-log.herokuapp.com']
+ALLOWED_HOSTS = ['abuad-visitors-log.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'api'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,6 +56,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gatePass.urls'
+
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {

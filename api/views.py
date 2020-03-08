@@ -2,7 +2,6 @@ from rest_framework import generics
 from .models import Visitor
 from .serializer import createVisitorSerializer, UpdateVisitorSerializer, viewVisitorSerializer
 
-
 class VisitorView(generics.ListAPIView):
     serializer_class = viewVisitorSerializer
     queryset = Visitor.objects.all()

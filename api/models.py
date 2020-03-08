@@ -16,3 +16,4 @@ class Visitor(models.Model):
 
     def __str__(self):
         return self.first_name +'\t'+ self.last_name
+        
